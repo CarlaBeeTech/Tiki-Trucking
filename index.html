@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>IronRoad Freight — Local Hauling, Done Right</title>
+  <title>Tiki Trucking — Local Hauling, Done Right</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -18,7 +18,6 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -39,35 +38,24 @@
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
-
     .nav-logo {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.8rem;
-      letter-spacing: 0.08em;
-      color: var(--amber);
-      text-decoration: none;
+      font-size: 1.8rem; letter-spacing: 0.08em;
+      color: var(--amber); text-decoration: none;
     }
     .nav-logo span { color: var(--white); }
-
     .nav-links { display: flex; gap: 2.4rem; list-style: none; }
     .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+      font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
       transition: color .2s;
     }
     .nav-links a:hover { color: var(--amber); }
-
     .nav-cta {
-      background: var(--amber);
-      color: var(--black) !important;
-      padding: 0.52rem 1.4rem;
-      border-radius: 2px;
-      font-weight: 700 !important;
-      transition: background .2s !important;
+      background: var(--amber); color: var(--black) !important;
+      padding: 0.52rem 1.4rem; border-radius: 2px;
+      font-weight: 700 !important; transition: background .2s !important;
     }
     .nav-cta:hover { background: var(--amber-dk) !important; }
 
@@ -76,31 +64,23 @@
       min-height: 100vh;
       display: flex; flex-direction: column; justify-content: flex-end;
       padding: 0 3rem 6rem;
-      position: relative;
-      overflow: hidden;
+      position: relative; overflow: hidden;
     }
-
     .hero-bg {
-      position: absolute; inset: 0;
-      overflow: hidden;
+      position: absolute; inset: 0; overflow: hidden;
     }
-
     .hero-bg video {
       position: absolute; inset: 0;
       width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: center;
-      filter: brightness(0.55);
+      object-fit: cover; object-position: center;
+      filter: brightness(0.52);
     }
-
     .hero-bg::after {
       content: '';
       position: absolute; inset: 0;
-      background: linear-gradient(to bottom, rgba(10,10,10,0.15) 0%, rgba(10,10,10,0.85) 78%);
+      background: linear-gradient(to bottom, rgba(10,10,10,0.10) 0%, rgba(10,10,10,0.88) 80%);
       pointer-events: none;
     }
-
-    /* diagonal amber stripe */
     .hero::after {
       content: '';
       position: absolute; left: -6%; bottom: -2px;
@@ -108,63 +88,47 @@
       background: var(--amber);
       transform: skewX(-22deg);
     }
-
     .hero-eyebrow {
       position: relative;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--amber);
-      margin-bottom: 1rem;
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--amber); margin-bottom: 1rem;
     }
-
     .hero-title {
       position: relative;
       font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(4.5rem, 10vw, 9rem);
-      line-height: 0.92;
-      letter-spacing: 0.02em;
-      color: var(--white);
-      max-width: 820px;
+      line-height: 0.92; letter-spacing: 0.02em;
+      color: var(--white); max-width: 820px;
     }
     .hero-title em { color: var(--amber); font-style: normal; }
-
     .hero-sub {
       position: relative;
-      margin-top: 1.6rem;
-      max-width: 540px;
-      font-size: 1.05rem;
-      font-weight: 300;
+      margin-top: 1.6rem; max-width: 540px;
+      font-size: 1.05rem; font-weight: 300;
       color: rgba(244,241,236,0.75);
     }
-
     .hero-actions {
       position: relative;
-      margin-top: 2.6rem;
-      display: flex; gap: 1rem; flex-wrap: wrap;
+      margin-top: 2.6rem; display: flex; gap: 1rem; flex-wrap: wrap;
     }
-
     .btn-primary {
       background: var(--amber); color: var(--black);
       padding: 0.9rem 2.4rem;
       font-family: 'Barlow', sans-serif; font-size: 0.85rem; font-weight: 700;
       letter-spacing: 0.12em; text-transform: uppercase;
       text-decoration: none; border: none; cursor: pointer;
-      border-radius: 2px;
-      transition: background .2s, transform .15s;
+      border-radius: 2px; transition: background .2s, transform .15s;
       display: inline-block;
     }
     .btn-primary:hover { background: var(--amber-dk); transform: translateY(-2px); }
-
     .btn-ghost {
       background: transparent; color: var(--white);
       padding: 0.9rem 2.4rem;
       font-family: 'Barlow', sans-serif; font-size: 0.85rem; font-weight: 600;
       letter-spacing: 0.12em; text-transform: uppercase;
       text-decoration: none; border: 1px solid rgba(244,241,236,0.35); cursor: pointer;
-      border-radius: 2px;
-      transition: border-color .2s, color .2s;
+      border-radius: 2px; transition: border-color .2s, color .2s;
       display: inline-block;
     }
     .btn-ghost:hover { border-color: var(--amber); color: var(--amber); }
@@ -173,7 +137,6 @@
     .stats-bar {
       background: var(--amber);
       display: flex; justify-content: space-around; flex-wrap: wrap;
-      gap: 0; padding: 0;
     }
     .stat {
       flex: 1; min-width: 160px;
@@ -187,8 +150,7 @@
     }
     .stat-label {
       font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
-      text-transform: uppercase; color: rgba(0,0,0,0.6);
-      margin-top: 0.25rem;
+      text-transform: uppercase; color: rgba(0,0,0,0.6); margin-top: 0.25rem;
     }
 
     /* ── SECTION SCAFFOLD ─────────────────────────────── */
@@ -200,8 +162,7 @@
     .section-title {
       font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(2.4rem, 5vw, 4rem);
-      letter-spacing: 0.04em; line-height: 1.05; color: var(--white);
-      max-width: 680px;
+      letter-spacing: 0.04em; line-height: 1.05; color: var(--white); max-width: 680px;
     }
     .section-body {
       margin-top: 1.2rem; max-width: 560px;
@@ -210,66 +171,42 @@
 
     /* ── SERVICES ─────────────────────────────────────── */
     #services { background: var(--charcoal); }
-
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5px;
-      margin-top: 3.5rem;
-      border: 1.5px solid var(--border);
+      gap: 1.5px; margin-top: 3.5rem; border: 1.5px solid var(--border);
     }
-
     .service-card {
-      background: var(--steel);
-      padding: 2.4rem 2rem;
+      background: var(--steel); padding: 2.4rem 2rem;
       border: 1.5px solid transparent;
       transition: border-color .25s, background .25s;
       position: relative; overflow: hidden;
     }
     .service-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0;
-      width: 3px; height: 0;
-      background: var(--amber);
-      transition: height .35s;
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 3px; height: 0; background: var(--amber); transition: height .35s;
     }
     .service-card:hover::before { height: 100%; }
     .service-card:hover { background: #21262e; border-color: var(--border); }
-
-    .service-icon {
-      font-size: 2rem; margin-bottom: 1.1rem; display: block;
-    }
+    .service-icon { font-size: 2rem; margin-bottom: 1.1rem; display: block; }
     .service-name {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.45rem; letter-spacing: 0.06em; color: var(--white);
-      margin-bottom: 0.6rem;
+      font-size: 1.45rem; letter-spacing: 0.06em; color: var(--white); margin-bottom: 0.6rem;
     }
     .service-desc { font-size: 0.9rem; color: rgba(244,241,236,0.55); }
 
     /* ── WHY US ───────────────────────────────────────── */
     #why { background: var(--black); }
     .why-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
     }
-    .why-img {
-      position: relative;
-      border-radius: 2px; overflow: hidden;
-    }
-    .why-img img {
-      width: 100%; height: 420px; object-fit: cover; display: block;
-      filter: grayscale(40%);
-    }
+    .why-img { position: relative; border-radius: 2px; overflow: hidden; }
+    .why-img img { width: 100%; height: 420px; object-fit: cover; display: block; filter: grayscale(40%); }
     .why-img::after {
-      content: '';
-      position: absolute; inset: 0;
-      box-shadow: inset 0 0 0 3px var(--amber);
-      border-radius: 2px;
-      pointer-events: none;
+      content: ''; position: absolute; inset: 0;
+      box-shadow: inset 0 0 0 3px var(--amber); border-radius: 2px; pointer-events: none;
     }
-
     .pillars { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
     .pillar { display: flex; gap: 1.1rem; }
     .pillar-num {
@@ -280,26 +217,17 @@
     .pillar-text span { font-size: 0.88rem; color: rgba(244,241,236,0.55); }
 
     /* ── CONTACT / ORDER FORM ─────────────────────────── */
-    #contact {
-      background: var(--charcoal);
-      position: relative; overflow: hidden;
-    }
+    #contact { background: var(--charcoal); position: relative; overflow: hidden; }
     #contact::before {
       content: 'REQUEST';
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 18vw;
+      font-family: 'Bebas Neue', sans-serif; font-size: 18vw;
       position: absolute; right: -2%; top: 50%; transform: translateY(-50%);
-      color: rgba(255,255,255,0.02);
-      pointer-events: none; user-select: none;
-      line-height: 1;
+      color: rgba(255,255,255,0.02); pointer-events: none; user-select: none; line-height: 1;
     }
-
     .contact-inner {
-      display: grid;
-      grid-template-columns: 1fr 1.55fr;
+      display: grid; grid-template-columns: 1fr 1.55fr;
       gap: 4rem; align-items: start;
     }
-    .contact-info { }
     .contact-info address {
       font-style: normal; margin-top: 2rem;
       display: flex; flex-direction: column; gap: 1rem;
@@ -307,23 +235,16 @@
     .contact-detail { display: flex; gap: 0.8rem; align-items: flex-start; }
     .contact-detail .icon { color: var(--amber); font-size: 1.1rem; margin-top: 1px; }
     .contact-detail p { font-size: 0.9rem; color: rgba(244,241,236,0.65); }
-    .contact-detail strong { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); margin-bottom: 0.15rem; }
-
-    /* FORM */
+    .contact-detail strong {
+      display: block; font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); margin-bottom: 0.15rem;
+    }
     .order-form {
-      background: var(--steel);
-      padding: 2.8rem 2.4rem;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      position: relative;
+      background: var(--steel); padding: 2.8rem 2.4rem;
+      border: 1px solid var(--border); border-radius: 2px;
     }
-    .form-heading {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.7rem; letter-spacing: 0.06em;
-      margin-bottom: 0.4rem;
-    }
+    .form-heading { font-family: 'Bebas Neue', sans-serif; font-size: 1.7rem; letter-spacing: 0.06em; margin-bottom: 0.4rem; }
     .form-subheading { font-size: 0.85rem; color: var(--muted); margin-bottom: 2rem; }
-
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     .form-group { display: flex; flex-direction: column; margin-bottom: 1.1rem; }
     .form-group label {
@@ -335,56 +256,37 @@
     .form-group textarea {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.1);
-      color: var(--white);
-      padding: 0.7rem 0.9rem;
+      color: var(--white); padding: 0.7rem 0.9rem;
       font-family: 'Barlow', sans-serif; font-size: 0.92rem; font-weight: 300;
-      border-radius: 2px;
-      outline: none;
-      transition: border-color .2s, background .2s;
-      width: 100%;
+      border-radius: 2px; outline: none;
+      transition: border-color .2s, background .2s; width: 100%;
     }
     .form-group select option { background: var(--steel); }
     .form-group input:focus,
     .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--amber);
-      background: rgba(232,160,32,0.05);
-    }
+    .form-group textarea:focus { border-color: var(--amber); background: rgba(232,160,32,0.05); }
     .form-group input::placeholder,
     .form-group textarea::placeholder { color: rgba(138,138,138,0.6); }
     .form-group textarea { resize: vertical; min-height: 100px; }
-
     .form-submit {
       width: 100%; margin-top: 0.5rem;
-      background: var(--amber); color: var(--black);
-      padding: 1rem;
+      background: var(--amber); color: var(--black); padding: 1rem;
       font-family: 'Barlow', sans-serif; font-size: 0.9rem; font-weight: 700;
       letter-spacing: 0.14em; text-transform: uppercase;
       border: none; cursor: pointer; border-radius: 2px;
       transition: background .2s, transform .15s;
     }
     .form-submit:hover { background: var(--amber-dk); transform: translateY(-2px); }
-
     .form-note { margin-top: 1rem; font-size: 0.78rem; color: var(--muted); text-align: center; }
-    .form-note a { color: var(--amber); text-decoration: none; }
-
-    .success-msg {
-      display: none; text-align: center; padding: 2rem;
-      font-size: 1.1rem; color: var(--amber);
-    }
+    .success-msg { display: none; text-align: center; padding: 2rem; font-size: 1.1rem; color: var(--amber); }
 
     /* ── FOOTER ───────────────────────────────────────── */
     footer {
-      background: var(--black);
-      border-top: 1px solid var(--border);
+      background: var(--black); border-top: 1px solid var(--border);
       padding: 3rem 3rem 2rem;
-      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem;
-      align-items: center;
+      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; align-items: center;
     }
-    .footer-logo {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.6rem; letter-spacing: 0.08em; color: var(--amber);
-    }
+    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.08em; color: var(--amber); }
     .footer-logo span { color: var(--white); }
     .footer-copy { font-size: 0.78rem; color: var(--muted); }
     .footer-links { display: flex; gap: 1.8rem; }
@@ -415,7 +317,7 @@
 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="#"><span>IRON</span>ROAD</a>
+  <a class="nav-logo" href="#"><span>TIKI</span> TRUCKING</a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#why">Why Us</a></li>
@@ -509,7 +411,7 @@
       <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=900&q=80" alt="Semi truck on highway"/>
     </div>
     <div class="reveal">
-      <p class="section-eyebrow">Why IronRoad</p>
+      <p class="section-eyebrow">Why Tiki Trucking</p>
       <h2 class="section-title">Owner-Operated Means You Deal With the Driver</h2>
       <p class="section-body">No dispatch chain, no middlemen. When you call, the person driving your freight picks up. That's accountability you can't buy from a big carrier.</p>
       <div class="pillars">
@@ -549,7 +451,7 @@
 <!-- CONTACT / ORDER FORM -->
 <section id="contact">
   <div class="contact-inner">
-    <div class="reveal">
+    <div class="contact-info reveal">
       <p class="section-eyebrow">Get a Quote or Book a Haul</p>
       <h2 class="section-title">Ready to Move Something?</h2>
       <p class="section-body">Fill out the form and I'll respond within 2 hours. Prefer to call or email directly? You've got my info.</p>
@@ -565,7 +467,7 @@
           <span class="icon">✉️</span>
           <div>
             <strong>Email</strong>
-            <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="94f0fde7e4f5e0f7fcd4fde6fbfae6fbf5f0f2e6f1fdf3fce0baf7fbf9">[email&#160;protected]</a></p>
+            <p>dispatch@tikitrucking.com</p>
           </div>
         </div>
         <div class="contact-detail">
@@ -588,7 +490,6 @@
     <div class="order-form reveal" id="orderFormWrap">
       <h3 class="form-heading">Haul Request Form</h3>
       <p class="form-subheading">All fields marked with * are required.</p>
-
       <form id="orderForm" novalidate>
         <div class="form-row">
           <div class="form-group">
@@ -600,7 +501,6 @@
             <input type="text" id="lname" name="lname" placeholder="Smith" required/>
           </div>
         </div>
-
         <div class="form-row">
           <div class="form-group">
             <label for="email">Email Address *</label>
@@ -611,12 +511,10 @@
             <input type="tel" id="phone" name="phone" placeholder="(816) 555-0000"/>
           </div>
         </div>
-
         <div class="form-group">
           <label for="company">Company / Business Name</label>
           <input type="text" id="company" name="company" placeholder="ABC Construction LLC"/>
         </div>
-
         <div class="form-row">
           <div class="form-group">
             <label for="service">Service Type *</label>
@@ -643,7 +541,6 @@
             </select>
           </div>
         </div>
-
         <div class="form-row">
           <div class="form-group">
             <label for="pickup">Pickup Location *</label>
@@ -654,21 +551,17 @@
             <input type="text" id="dropoff" name="dropoff" placeholder="City, address, or zip" required/>
           </div>
         </div>
-
         <div class="form-group">
           <label for="date">Preferred Pickup Date *</label>
           <input type="date" id="date" name="date" required/>
         </div>
-
         <div class="form-group">
           <label for="details">Freight Details & Special Instructions</label>
           <textarea id="details" name="details" placeholder="Describe your load, any special handling requirements, or questions…"></textarea>
         </div>
-
         <button type="submit" class="form-submit">Submit Haul Request →</button>
-        <p class="form-note">By submitting you agree to be contacted at the info provided. No spam — ever. <a href="#">Privacy Policy</a></p>
+        <p class="form-note">By submitting you agree to be contacted at the info provided. No spam — ever.</p>
       </form>
-
       <div class="success-msg" id="successMsg">
         ✅ <strong>Request Received!</strong><br>
         I'll be in touch within 2 hours to confirm your haul and provide a quote.
@@ -680,8 +573,8 @@
 <!-- FOOTER -->
 <footer>
   <div>
-    <div class="footer-logo"><span>IRON</span>ROAD</div>
-    <p class="footer-copy" style="margin-top:.5rem">© 2026 IronRoad Freight. All rights reserved.</p>
+    <div class="footer-logo"><span>TIKI</span> TRUCKING</div>
+    <p class="footer-copy" style="margin-top:.5rem">© 2026 Tiki Trucking. All rights reserved.</p>
   </div>
   <nav class="footer-links">
     <a href="#services">Services</a>
@@ -690,15 +583,17 @@
   </nav>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  /* ── Scroll reveal ── */
+<script>
+  /* Scroll reveal */
   const reveals = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
   }, { threshold: 0.12 });
   reveals.forEach(el => io.observe(el));
 
-  /* ── Form submission (mailto fallback + visual confirmation) ── */
+  /* Form submission */
   document.getElementById('orderForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const f = this;
@@ -710,9 +605,8 @@
     });
     if (!valid) return;
 
-    /* Build mailto string */
     const d = new FormData(f);
-    const subject = encodeURIComponent(`Haul Request – ${d.get('fname')} ${d.get('lname')} – ${d.get('service')}`);
+    const subject = encodeURIComponent(`Haul Request - ${d.get('fname')} ${d.get('lname')} - ${d.get('service')}`);
     const body = encodeURIComponent(
       `Name: ${d.get('fname')} ${d.get('lname')}\n` +
       `Company: ${d.get('company') || 'N/A'}\n` +
@@ -726,8 +620,16 @@
       `Details:\n${d.get('details') || 'None provided'}`
     );
 
-    window.location.href = `mailto:dispatch@ironroadfreight.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:dispatch@tikitrucking.com?subject=${subject}&body=${body}`;
 
-    /* Show success state */
     setTimeout(() => {
       f.style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+    }, 800);
+  });
+
+  /* Set date min to today */
+  document.getElementById('date').min = new Date().toISOString().split('T')[0];
+</script>
+</body>
+</html>
