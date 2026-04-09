@@ -1,4 +1,4 @@
-# Tiki Trucking — Business Website
+# S & T Trucking — Business Website
 
 A professional, single-page business website for a solo trucking/freight company. Built with pure HTML, CSS, and JavaScript — no frameworks, no dependencies, no build tools required.
 
@@ -6,7 +6,8 @@ A professional, single-page business website for a solo trucking/freight company
 
 ## 🚛 Live Demo
 
-[View Live Site](https://Tiki-Trucking.github.io/Tiki-Trucking
+[View Live Site](https://Tiki-Trucking
+.github.io/Tiki-Trucking
 ) ← *(update with your GitHub Pages URL)*
 
 ---

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tiki-Trucking — Local Hauling, Done Right</title>
+  <title>IronRoad Freight — Local Hauling, Done Right</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -82,15 +82,22 @@
 
     .hero-bg {
       position: absolute; inset: 0;
-      background:
-        linear-gradient(to bottom, rgba(10,10,10,0.30) 0%, rgba(10,10,10,0.88) 78%),
-        url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
-      animation: slowZoom 20s ease-in-out infinite alternate;
+      overflow: hidden;
     }
 
-    @keyframes slowZoom {
-      from { transform: scale(1); }
-      to   { transform: scale(1.06); }
+    .hero-bg video {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(0.55);
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(10,10,10,0.15) 0%, rgba(10,10,10,0.85) 78%);
+      pointer-events: none;
     }
 
     /* diagonal amber stripe */
@@ -299,7 +306,7 @@
     }
     .contact-detail { display: flex; gap: 0.8rem; align-items: flex-start; }
     .contact-detail .icon { color: var(--amber); font-size: 1.1rem; margin-top: 1px; }
-    .contact-detail p { font-size: 1.05rem; color: rgba(244,241,236,0.65); }
+    .contact-detail p { font-size: 0.9rem; color: rgba(244,241,236,0.65); }
     .contact-detail strong { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); margin-bottom: 0.15rem; }
 
     /* FORM */
@@ -419,7 +426,12 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-bg">
+    <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1800&q=80">
+      <source src="https://videos.pexels.com/video-files/2491284/2491284-uhd_3840_2160_24fps.mp4" type="video/mp4"/>
+      <source src="https://videos.pexels.com/video-files/1437396/1437396-uhd_3840_2160_24fps.mp4" type="video/mp4"/>
+    </video>
+  </div>
   <p class="hero-eyebrow">Kansas City's Premier Solo Carrier</p>
   <h1 class="hero-title">Heavy Loads.<br><em>Zero</em> Excuses.</h1>
   <p class="hero-sub">Reliable, on-time local freight hauling. One truck, one driver, full accountability — from pickup to delivery.</p>
@@ -497,7 +509,7 @@
       <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=900&q=80" alt="Semi truck on highway"/>
     </div>
     <div class="reveal">
-      <p class="section-eyebrow">Why Tiki-Trucking</p>
+      <p class="section-eyebrow">Why IronRoad</p>
       <h2 class="section-title">Owner-Operated Means You Deal With the Driver</h2>
       <p class="section-body">No dispatch chain, no middlemen. When you call, the person driving your freight picks up. That's accountability you can't buy from a big carrier.</p>
       <div class="pillars">
@@ -553,7 +565,7 @@
           <span class="icon">✉️</span>
           <div>
             <strong>Email</strong>
-            <p>dispatch@tikitrucking.com</p>
+            <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="94f0fde7e4f5e0f7fcd4fde6fbfae6fbf5f0f2e6f1fdf3fce0baf7fbf9">[email&#160;protected]</a></p>
           </div>
         </div>
         <div class="contact-detail">
@@ -668,8 +680,8 @@
 <!-- FOOTER -->
 <footer>
   <div>
-    <div class="footer-logo"><span>Tiki</span>Trucking</div>
-    <p class="footer-copy" style="margin-top:.5rem">© 2026 Tiki-Trucking. All rights reserved.</p>
+    <div class="footer-logo"><span>IRON</span>ROAD</div>
+    <p class="footer-copy" style="margin-top:.5rem">© 2026 IronRoad Freight. All rights reserved.</p>
   </div>
   <nav class="footer-links">
     <a href="#services">Services</a>
@@ -678,7 +690,7 @@
   </nav>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   /* ── Scroll reveal ── */
   const reveals = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
@@ -719,12 +731,3 @@
     /* Show success state */
     setTimeout(() => {
       f.style.display = 'none';
-      document.getElementById('successMsg').style.display = 'block';
-    }, 800);
-  });
-
-  /* ── Set date min to today ── */
-  document.getElementById('date').min = new Date().toISOString().split('T')[0];
-</script>
-</body>
-</html>
