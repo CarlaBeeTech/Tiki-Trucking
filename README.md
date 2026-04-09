@@ -6,7 +6,7 @@ A professional, single-page business website for a solo trucking/freight company
 
 ## 🚛 Live Demo
 
-[View Live Site](https://Tiki-Trucking
+[View Live Site](https://carlaBeeTech
 .github.io/Tiki-Trucking
 ) ← *(update with your GitHub Pages URL)*
 
